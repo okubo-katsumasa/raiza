@@ -1,0 +1,301 @@
+/* D3 */
+.modalRect {
+	display: none;
+}
+.nodes .cu {
+	fill: #fd0072;
+}
+.nodes .co {
+	fill: #0867ff;
+}
+.nodes .pa {
+	fill: #fdab01;
+}
+image {
+	opacity: 0.3;
+}
+image.hover, image.selected, image.searched,
+	image.target, image.source, image.mutual {
+	opacity: 1;
+}
+.off image {
+	opacity: 0.3;
+}
+.soff .source {
+	opacity: 0;
+}
+.toff .target {
+	opacity: 0;
+}
+.toff.soff line {
+	opacity: 0;
+}
+
+.marrow polygon {
+	fill: #3A0;
+}
+.tarrow polygon {
+	fill: #F7A;
+}
+.sarrow polygon {
+	fill: #7AF;
+}
+
+circle.target.source {
+	opacity: 1;
+	fill: #3A0;
+	/* stroke-width: 4; */
+}
+circle.target {
+	fill: #F7A;
+}
+circle.source {
+	fill: #7AF;
+}
+circle.pickup, circle.target.pickup, circle.source.pickup {
+	fill: #F84;
+	opacity: 1;
+}
+
+line {
+	opacity: 1;
+	/* stroke-width: 6; */
+}
+line.target {
+	stroke: #F7A;
+}
+line.source {
+	stroke: #7AF;
+}
+line.mutual.target, line.mutual.source {
+	opacity: 1;
+	stroke: #3A0;
+	/* stroke-width: 4; */
+}
+
+.pidols {
+	display: none;
+}
+.pidols.show {
+	display: inline;
+}
+.pidols.show image {
+	opacity: 1;
+}
+
+
+.tooltip-inner {
+	max-width: 150px;
+}
+
+.source.tooltip .tooltip-arrow {
+	border-bottom-color: rgba(68 , 136, 255, 0.8);
+}
+.source .tooltip-inner {
+	background-color: rgba(68 , 136, 255, 0.8);
+}
+.target.tooltip .tooltip-arrow {
+	border-top-color: rgba(255 , 68, 136, 0.8);
+}
+.target .tooltip-inner {
+	background-color: rgba(255 , 68, 136, 0.8);
+}
+
+/* MENU */
+body {
+	font-family: Helvetica, Arial, "ヒラギノ角ゴ ProN W3", "モリサワ 新ゴ R", Droid Sans, "メイリオ", sans-serif;
+}
+
+i {
+	color: #33A;
+}
+i.target {
+	color: #F7A;
+}
+i.source {
+	color: #7AF;
+}
+i.mutual {
+	color: #3A0;
+}
+
+#container {
+	text-align: center;
+	padding-top: 5px;
+}
+#contents {
+	display: inline-block;
+	position: relative;
+}
+
+#contents i {
+	display: block;
+	font-size: 54px;
+	margin-top: 12px;
+}
+#contents i.s {
+	font-size: 20px;
+}
+#contents i:hover {
+	cursor: pointer;
+}
+
+#header {
+	background-color: #FFF;
+	font-family: FontAwesome;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 8px;
+	border-bottom: 1px solid #CCF;
+}
+
+#header a {
+	display: inline-block;
+	cursor: pointer;
+	margin:	0 -2px;
+	padding: 8px 32px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #AAE;
+	text-align: center;
+	transition: .1s ease-in-out;
+}
+
+#header a:hover, #header a.here {
+	color: #33A;
+	border-bottom: 6px solid #33A;
+}
+
+#header .link {
+	display: block;
+	font-size: 17px;
+}
+
+#header .release {
+	display: inline;
+	font-size: 11px;
+}
+/*
+a#help {
+	position: absolute;
+	padding-top: 0;
+	vertical-align: top;
+	right: 0;
+}
+
+a#help span {
+	font-size: 42px;
+	color: #76A;
+}
+
+a#help:hover {
+	border-bottom: none;
+}
+*/
+
+#lmenu {
+	position: absolute;
+	left: 0;
+	top: 64px;
+}
+#rmenu-top {
+	position: absolute;
+	right: 0;
+	top: 64px;
+}
+#rmenu-bottom {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+#searchBox {
+	font-family: FontAwesome;
+	text-decoration: inherit;
+	color: #666;
+	font-size: 16px;
+	margin-top: 8px;
+	padding-left: 8px;
+	border: 2px solid rgba(51,51,170, 0.5);
+	border-radius: 16px;
+	background-color: rgba(51,51,170, 0.05);
+	opacity: 0.9;
+}
+#lmenu .slider {
+	height: 150px;
+	margin-top: 20px;
+}
+
+i#showTarget {
+	margin: -12px 0px;
+}
+
+.slider:hover {
+	cursor: pointer;
+}
+.slider-track-high {
+	background: #33A;
+	opacity: 0.3;
+}
+.slider-selection {
+	background: #33A;
+	opacity: 0.05;
+}
+
+.off {
+	opacity: 0;
+}
+
+i.off {
+	opacity: 0.3;
+}
+
+#lmenu .fa-stack {
+	height: 1em;
+	line-height: 1em;
+}
+
+#lmenu .fa-stack-1x.string {
+	font-size: .28em;
+	font-weight: bold;
+	margin-top: 1.1em;
+}
+
+.helpImageBox img {
+	width: 150px;
+	margin: 10px;
+	border: 1px solid #999;
+}
+.helpExp {
+	display: block;
+	margin-bottom: 10px;
+}
+.helpExp p {
+	margin: 0px 0px 0px 10px; 
+}
+
+.helpTitle {
+	font-weight: bold;
+}
+.tab-content {
+	margin-top: 15px;
+}
+
+.mfp-bg {
+	z-index: 5002;
+}
+.mfp-wrap {
+	z-index: 5003;
+}
+.mfp-preloader {
+	z-index: 5004;
+}
+.mfp-content {
+	z-index: 5005;
+}
+button.mfp-arrow {
+	z-index: 5006;
+}
+.mfp-figure {
+	z-index: -1;
+}
