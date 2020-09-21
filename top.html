@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/css/bootstrap-slider.min.css" rel="stylesheet" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+		<link href="css/ii.css" rel="stylesheet"/>
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script src="https://use.fontawesome.com/6efbfbd38a.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/bootstrap-slider.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+		<title>ライザのアトリエ リンケージ調合図</title>
+		<!--
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-104681721-3', 'auto');
+			ga('send', 'pageview');
+		</script>
+		-->
+	</head>
+	<body>
+		<div id="container">
+			<div id="contents">
+				<div id="header">
+					<a href="https://idol-introduction.netlify.com/" class="here">
+						<span class="link">リンケージ調合図</span>
+						<!--<span class="release">更新：</span><span class="release ii">...情報取得中...</span>-->
+					</a>
+				</div>
+				<div id="lmenu">
+					<h4>カテゴリー</h4>
+					<ul class="lists">
+						<li>トップス
+							<ul>
+								<li>Tシャツ/カットソー</li>
+								<li>シャツ/ブラウス</li>
+								<li>ポロシャツ</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!--
+				<div id="lmenu">
+					<i id="help" class="fa fa-question-circle"
+						data-toggle="tooltip" data-placement="right" title="操作方法"></i>
+					<i id="shuffle" class="fa fa-random"
+						 data-toggle="tooltip" data-placement="right" title="シャッフル"></i>
+					<i id="show2017" class="fa-stack"
+						data-toggle="tooltip" data-placement="right" title="2017年表示 / 非表示">
+						<i class="fa fa-calendar-o fa-stack-1x"></i>
+						<span class="fa fa-stack-1x string">2017</span>
+					</i>
+					<i id="show2018" class="fa-stack"
+						data-toggle="tooltip" data-placement="right" title="2018年表示 / 非表示">
+						<i class="fa fa-calendar-o fa-stack-1x"></i>
+						<span class="fa fa-stack-1x string">2018</span>
+					</i>
+					<i id="showSource" class="fa fa-long-arrow-right"
+						data-toggle="tooltip" data-placement="right" title="紹介したアイドル表示 / 非表示"></i>
+					<i id="showTarget" class="fa fa-long-arrow-left"
+						 data-toggle="tooltip" data-placement="right" title="紹介されたアイドル表示 / 非表示"></i>
+					<input id="collideSlider" type="text" data-slider-min="25" data-slider-max="50" data-slider-tooltip="hide"
+						data-slider-step="1" data-slider-value="30" data-slider-orientation="vertical">
+					<i class="fa fa-expand s"><span id="collideValue">30</span></i>
+				</div>
+				-->
+				<div id="rmenu-top">
+					<div id="search">
+						<input id="searchBox" type="text" placeholder="&#xf002;アイドル名">
+					</div>
+				</div>
+				<div id="rmenu-bottom">
+					<i id="zoomIn" class="fa fa-search-plus"></i>
+					<i id="zoomOut" class="fa fa-search-minus"></i>
+				</div>
+			</div>
+			<div id="helpModal" class="modal fade">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div id="helpTab" class="modal-body text-left">
+							<h4>操作方法</h4>
+							<ul class="nav nav-tabs" role="tablist">
+								<li role="presentation"><a href="#helpMain" aria-controls="helpMain" role="tab" data-toggle="tab">メイン</a></li>
+								<li role="presentation" class="active"><a href="#helpIdol" aria-controls="helpIdol" role="tab" data-toggle="tab">アイドルアイコン</a></li>
+								<li role="presentation"><a href="#helpEtc" aria-controls="helpEtc" role="tab" data-toggle="tab">その他</a></li>
+							</ul>
+							<div class="tab-content">
+								<div role="tabpanel" class="tab-pane" id="helpMain">
+									<p><span class="helpTitle">＜操作アイコン＞</span>：</p>
+									<p><i class="fa fa-random"></i>：シャッフル</p>
+									<p><i class="fa fa-filter"></i>：フィルタ設定</p>
+									<p><i class="fa fa-calendar-o"></i>：〇〇年アイドル紹介表示 / 非表示</p>
+									<p><i class="fa fa-expand"></i>：アイコン間隔変更</p>
+									<p><i class="fa fa-search"></i>：アイドル検索（漢字 or ひらがな）</p>
+									<p><i class="fa fa-search-plus"></i> / <i class="fa fa-search-minus"></i>：ズームイン / ズームアウト（中央）</p>
+									<p>ホイール<i class="fa fa-angle-double-up"></i> / <i class="fa fa-angle-double-down"></i>：ズームイン / ズームアウト（マウス位置）</p>
+									<p><i class="fa fa-hand-rock-o"></i>ドラッグ（画面）：画面移動</p>
+									<p><i class="fa fa-hand-rock-o"></i>ドラッグ（アイコン）：アイコン移動</p>
+									<p><i class="fa fa-long-arrow-right source"></i>：紹介したアイドル</p>
+									<p><i class="fa fa-long-arrow-right target"></i>：紹介されたアイドル</p>
+									<p><i class="fa fa-long-arrow-right mutual"></i>：互いに紹介しているアイドル</p>
+									<p><span class="helpTitle">＜イメージ＞</span>：</p>
+									<div class="helpImageBox">
+										<a href="img/help/helpMain01.png"><img src="img/help/helpMain01.png"></a>
+										<a href="img/help/helpMain02.png"><img src="img/help/helpMain02.png"></a>
+										<a href="img/help/helpMain03.png"><img src="img/help/helpMain03.png"></a>
+									</div>
+								</div>
+								<div role="tabpanel" class="tab-pane active" id="helpIdol">
+									<p><span class="helpTitle">＜アイドル選択＞</span>：アイドルアイコンにマウスオーバー or タップ</p>
+									<p><span class="helpTitle">＜アイドル固定＞</span>：ダブルクリック or 選択中のアイドルアイコンをタップ</p>
+									<p><span class="helpTitle">＜ユニット絞込み＞</span>：アイドル固定中に関連アイドルアイコンにマウスオーバー or タップ</p>
+									<p><span class="helpTitle">＜イメージ＞</span>：</p>
+									<div class="helpImageBox">
+										<a href="img/help/helpIdol01.png"><img src="img/help/helpIdol01.png"></a>
+									</div>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="helpEtc">
+									<p><span class="helpTitle">＜更新日付＞</span>：<span class="release ii">...情報取得中...</span></p>
+									<p><span class="helpTitle">＜連絡先＞</span>：<a href="https://twitter.com/xnimasu">Twitter</a></p>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<a class="btn btn-primary" data-dismiss="modal" href="#">閉じる</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/ii.js"></script>
+	</body>
+</html>
